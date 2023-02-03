@@ -4,5 +4,5 @@ This a full-stack project that I did using MERN Stack. The user can login and si
 ```
 cd git clone https://github.com/alimustafa-poder/Bayaan-Blogging-App
 ```
-You will need a MongoDB URI in the .env.development folder in backend.
+You will need a MongoDB URI, SECRET_KEY and PORT in the .env file in backend.
 Once your database is up and running, hit `npm run dev` in cd. Then enter `localhost:3000` in your browser.
