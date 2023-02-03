@@ -1,5 +1,5 @@
 # Bayaan-Blogging-App
-This a full-stack project that I did using MERN Stack. The user can login and sign up and create, read, update and delete blogs for them. 
+This a full-stack project that I did using MERN Stack. The user can login and sign up and create, read, update and delete blogs for themselves. 
 ## Installing Using Github
 ```
 cd git clone https://github.com/alimustafa-poder/Bayaan-Blogging-App
