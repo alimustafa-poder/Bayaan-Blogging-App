@@ -14,7 +14,7 @@ const router = express.Router()
 router.use(authorization)
 
 //Get everything
-router.get('/', getAllTest)
+router.post('/getAll', getAllTest)
 
 //Get a single workout
 router.get('/:id', getSingleTest)
