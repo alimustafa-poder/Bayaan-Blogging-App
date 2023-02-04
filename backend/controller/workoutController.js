@@ -4,7 +4,8 @@ import user from '../models/userModel.js'
 
 //get all test
 const getAllTest = async (req, res) => {
-    const tests = await testApp.find({}).sort({ createdAt: -1 })
+    const { email } = req.body
+    const tests = await testApp.find({ email }).sort({ createdAt: -1 })
     res.status(200).json(tests)
 }
 
@@ -28,11 +29,11 @@ const getSingleTest = async (req, res) => {
 }
 //create and post a single test
 const createTest = async (req, res, next) => {
-    const { title, author, body } = req.body
+    const data = req.body
 
     //adding the document to the db
     try {
-        const test = await testApp.create({ title, author, body })
+        const test = await testApp.create({ ...data })
         res.status(200).json({ test: test, status: 'ok' })
     } catch (error) {
         res.status(404).json({ error: error.message })
