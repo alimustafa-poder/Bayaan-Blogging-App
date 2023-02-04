@@ -1,4 +1,8 @@
+import { useAuthContext } from '../hooks/useAuth'
+
 function BlogDetails({ props }) {
+    const { user } = useAuthContext()
+    if (user.email !== props.email) return
     return (
         <div
             id={props._id}
