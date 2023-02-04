@@ -16,6 +16,7 @@ function CreateBlog() {
             return
         }
         const data = new FormData(e.target)
+        data.append('email', user.email)
         for (let [, value] of data.entries()) {
             if (value.trim() === '') {
                 setError('Please fill in all fields.')
@@ -27,6 +28,7 @@ function CreateBlog() {
         const response = await fetch('/api', {
             method: 'POST',
             headers: {
+                accepts: 'application/json',
                 Authorization: `Bearer ${user.token}`,
             },
             body: data,
