@@ -52,7 +52,6 @@ function SingleBlog() {
     }
 
     if (blog == null) {
-        console.log(error)
         return <ErrorModal props={{ errorName: '401', errorMessage: error }} />
     }
 
