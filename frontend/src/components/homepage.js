@@ -12,11 +12,15 @@ function Homepage() {
     useEffect(() => {
         async function getBlog() {
             if (!user) return
-            const response = await fetch('/api', {
+            const data = new FormData()
+            data.append('email', user.email)
+            const response = await fetch('/api/getAll', {
+                method: 'POST',
                 headers: {
-                    accepts: 'application/json',
+                    content_type: 'application/json',
                     Authorization: `Bearer ${user.token}`,
                 },
+                body: data,
             })
             const json = await response.json()
 
