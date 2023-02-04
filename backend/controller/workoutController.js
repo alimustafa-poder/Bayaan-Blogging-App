@@ -1,6 +1,5 @@
 import testApp from '../models/schema.js'
 import mongoose from 'mongoose'
-import user from '../models/userModel.js'
 
 //get all test
 const getAllTest = async (req, res) => {
