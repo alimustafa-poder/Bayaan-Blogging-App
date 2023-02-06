@@ -51,15 +51,11 @@ function SingleBlog() {
         )
     }
 
-    if (blog == null) {
-        return <ErrorModal props={{ errorName: '401', errorMessage: error }} />
-    }
-
     if (!user || error) {
         return <ErrorModal props={{ errorName: '401', errorMessage: error }} />
     }
 
-    if (blog === null && !error) {
+    if (blog == null && !error) {
         return (
             <div className="flex grow flex-row justify-center items-center text-3xl sm:text-7xl">
                 <FontAwesomeIcon

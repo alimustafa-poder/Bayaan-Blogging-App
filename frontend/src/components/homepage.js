@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom'
 import SingleBlog from './singleBlog'
 import { useAuthContext } from '../hooks/useAuth'
 import { PreAuthHomepage } from './pre-auth homepage/homepage'
+import ErrorModal from './errorModal'
 
 function Homepage() {
     const [blog, setBlog] = useState(null)
+    const [error, setError] = useState(null)
     const { user } = useAuthContext()
 
     useEffect(() => {
@@ -26,6 +28,9 @@ function Homepage() {
 
             if (response.ok) {
                 setBlog(json)
+            } else {
+                setError(json)
+                displayError()
             }
         }
         getBlog()
@@ -33,6 +38,20 @@ function Homepage() {
 
     if (!user) {
         return <PreAuthHomepage />
+    }
+
+    if (error) {
+        return <ErrorModal props={error} />
+    }
+
+    function displayError() {
+        if (!document.querySelector('#errorModal')) return
+        document.querySelector('#errorModal').classList.remove('scale-0')
+        setTimeout(
+            () =>
+                document.querySelector('#errorModal').classList.add('scale-0'),
+            2000
+        )
     }
 
     if (blog == null) {

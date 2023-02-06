@@ -18,9 +18,9 @@ const authorization = async (req, res, next) => {
         req.user = await User.findOne({ _id }).select('_id')
         next()
     } catch (error) {
-        console.log(error)
         return res.status(401).json({
-            message: 'Auth failed',
+            errorName: error.name,
+            errorMessage: 'Authentication failed. Try Logging in Again.',
         })
     }
 }
