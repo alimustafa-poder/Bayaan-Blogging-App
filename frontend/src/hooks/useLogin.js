@@ -11,7 +11,7 @@ export const useLogin = () => {
     const login = async (data) => {
         setisLoading(true)
         setError(null)
-        const response = await fetch('/api/login', {
+        const response = await fetch('/login', {
             method: 'POST',
             body: data,
         })
