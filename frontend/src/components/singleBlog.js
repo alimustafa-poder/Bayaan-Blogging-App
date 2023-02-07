@@ -25,7 +25,7 @@ function SingleBlog() {
                 return
             }
             console.log(user)
-            const response = await fetch(`/${params.id}`, {
+            const response = await fetch(`/api/${params.id}`, {
                 method: 'GET',
                 headers: {
                     accepts: 'application/json',
@@ -69,7 +69,7 @@ function SingleBlog() {
     }
 
     async function handleDelete() {
-        const response = await fetch(`/${params.id}`, {
+        const response = await fetch(`/api/${params.id}`, {
             method: 'DELETE',
             headers: {
                 accepts: 'application/json',

@@ -16,7 +16,7 @@ function Homepage() {
             if (!user) return
             const data = new FormData()
             data.append('email', user.email)
-            const response = await fetch('/getAll', {
+            const response = await fetch('/api/getAll', {
                 method: 'POST',
                 headers: {
                     content_type: 'application/json',
