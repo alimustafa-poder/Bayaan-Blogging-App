@@ -9,6 +9,7 @@ import cors from 'cors'
 import multer from 'multer'
 import rateLimit from 'express-rate-limit'
 import SlowDown from 'express-slow-down'
+import serverless from 'serverless-http'
 
 const app = express()
 
@@ -45,8 +46,8 @@ app.use(morgan('dev'))
 app.use(cors())
 
 //routes
-app.use('/api', userRoutes)
-app.use('/api', workoutRoutes)
+app.use('/.netlify/functions/api', userRoutes)
+app.use('/.netlify/functions/api', workoutRoutes)
 
 //connect to DB
 mongoose
