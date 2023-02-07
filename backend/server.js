@@ -61,4 +61,4 @@ mongoose
         console.log(err)
     })
 
-export const handler = serverless(app)
+exports.handler = serverless(app)
