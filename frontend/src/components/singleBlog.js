@@ -24,7 +24,7 @@ function SingleBlog() {
                 displayError()
                 return
             }
-            const response = await fetch(`/api/${params.id}`, {
+            const response = await fetch(`/${params.id}`, {
                 headers: {
                     accepts: 'application/json',
                     Authorization: `Bearer ${user.token}`,
@@ -67,7 +67,7 @@ function SingleBlog() {
     }
 
     async function handleDelete() {
-        const response = await fetch(`/api/${params.id}`, {
+        const response = await fetch(`/${params.id}`, {
             method: 'DELETE',
             headers: {
                 accepts: 'application/json',

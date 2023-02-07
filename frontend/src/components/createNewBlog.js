@@ -25,7 +25,7 @@ function CreateBlog() {
             }
         }
 
-        const response = await fetch('/api', {
+        const response = await fetch('/', {
             method: 'POST',
             headers: {
                 accepts: 'application/json',

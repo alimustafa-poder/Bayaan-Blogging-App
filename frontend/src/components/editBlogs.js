@@ -20,7 +20,7 @@ function EditBlogs() {
                 displayError()
                 return
             }
-            const response = await fetch(`/api/${params.id}`, {
+            const response = await fetch(`/${params.id}`, {
                 method: 'GET',
                 headers: {
                     accepts: 'application/json',
@@ -78,7 +78,7 @@ function EditBlogs() {
             displayError()
         } else {
             const data = new FormData(e.target)
-            const response = await fetch(`/api/${params.id}`, {
+            const response = await fetch(`/${params.id}`, {
                 method: 'PATCH',
                 headers: {
                     accepts: 'application/json',
