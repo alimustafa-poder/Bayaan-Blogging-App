@@ -11,7 +11,7 @@ export const useSignup = () => {
     const signup = async (data) => {
         setisLoading(true)
         setError(null)
-        const response = await fetch('/api/signup', {
+        const response = await fetch('/signup', {
             method: 'POST',
             body: data,
         })
