@@ -33,14 +33,17 @@ function LoginForm() {
         <>
             <div className="flex flex-col grow items-center justify-center w-full">
                 <form
-                    className="flex flex-col gap-y-2 p-2 w-72 gap-y-3"
+                    className="flex flex-col gap-y-2 p-12 w-80 items-center align-center gap-y-5 border-2 border-red-200 rounded-md shadow-md bg-zinc-100"
                     onSubmit={handleSubmit}
                 >
                     <div>
+                        <label for="email" className="font-bold">
+                            Enter your email:
+                        </label>
                         <input
                             type="email"
                             placeholder="xyz@email.com"
-                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-full text-xl sm:text-2xl bg-zinc-100 rounded-md border-red-200 shadow-md"
+                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-60 text-xl sm:text-2xl bg-zinc-100 rounded-md border-red-200 shadow-md"
                             name="email"
                             id="email"
                             onKeyUp={(e) => {
@@ -49,9 +52,12 @@ function LoginForm() {
                         ></input>
                     </div>
                     <div>
+                        <label for="password" className="font-bold">
+                            Enter your password:
+                        </label>
                         <input
                             type="password"
-                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-full text-xl sm:text-2xl bg-zinc-100 rounded-md border-red-200 shadow-md"
+                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-60 text-xl sm:text-2xl bg-zinc-100 rounded-md border-red-200 shadow-md"
                             name="password"
                             id="password"
                             onKeyUp={(e) => {
@@ -59,16 +65,16 @@ function LoginForm() {
                             }}
                         ></input>
                     </div>
-                    {error ? <p className="text-red-500">{error}</p> : ''}
                     <button
                         type="submit"
-                        className="text-xl font-normal bg-green-400 rounded-md hover:bg-green-500 h-8"
+                        className="text-xl w-60 font-normal bg-green-400 rounded-md hover:bg-green-500 h-8"
                     >
                         Login
                     </button>
+                    {error ? <p className="text-red-500">{error}</p> : ''}
                 </form>
                 <div className="text-start">
-                    <Link to="/signup" className="text-red-500 text-start">
+                    <Link to="/signup" className="mt-5 text-red-800 text-start">
                         Don't have an account? SignUp.
                     </Link>
                 </div>

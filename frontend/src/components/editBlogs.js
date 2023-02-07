@@ -35,7 +35,7 @@ function EditBlogs() {
                 setAuthor(json.author)
             } else {
                 await new Promise((resolve, reject) =>
-                    resolve(setBlog(json.error))
+                    resolve(setError(json.error))
                 )
             }
         }
@@ -53,6 +53,10 @@ function EditBlogs() {
 
     async function handleSubmit(e) {
         e.preventDefault()
+        if (error) {
+            displayError()
+        }
+        if (blog === null) return
         if (!user) {
             setError('You are not logged in.')
             displayError()
