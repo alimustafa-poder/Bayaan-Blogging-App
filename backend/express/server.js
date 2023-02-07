@@ -46,16 +46,16 @@ app.use(morgan('dev'))
 app.use(cors())
 
 //routes
-app.use('/.netlify/functions/api', userRoutes)
-app.use('/.netlify/functions/api', workoutRoutes)
+app.use('/.netlify/functions/bundle', userRoutes)
+app.use('/.netlify/functions/bundle', workoutRoutes)
 
 //connect to DB
 mongoose
     .connect(process.env.MONG_URI)
     .then((data) => {
-        app.listen(process.env.PORT, () => {
-            console.log('Listening on Port', process.env.PORT)
-        })
+        // app.listen(process.env.PORT, () => {
+        console.log('Listening on Port', process.env.PORT)
+        // })
     })
     .catch((err) => {
         console.log(err)

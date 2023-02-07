@@ -23,4 +23,4 @@ const testSchema = new Schema(
     { timestamps: true }
 )
 
-export default mongoose.model('testApp', testSchema)
+export default mongoose.models.testApp || mongoose.model('testApp', testSchema)

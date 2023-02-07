@@ -58,4 +58,4 @@ User.statics.login = async function (email, password) {
     throw Error('Email or Password is incorrect.')
 }
 
-export default mongoose.model('User', User)
+export default mongoose.models.User || mongoose.model('User', User)
