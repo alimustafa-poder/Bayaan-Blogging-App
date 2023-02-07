@@ -26,6 +26,7 @@ function SingleBlog() {
             }
             console.log(user)
             const response = await fetch(`/${params.id}`, {
+                method: 'GET',
                 headers: {
                     accepts: 'application/json',
                     Authorization: `Bearer ${user.token}`,

@@ -1,5 +1,9 @@
 [[redirects]]
+from = "/*"
+to = "/index.html"
 
+
+[[redirects]]
 from = "/*"
 to = "https://silver-custard-9195d2.netlify.app/.netlify/functions/bundle/:splat"
 status = 200
