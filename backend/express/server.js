@@ -46,8 +46,8 @@ app.use(morgan('dev'))
 app.use(cors())
 
 //routes
-app.use('/api/.netlify/functions/bundle', userRoutes)
-app.use('/api/.netlify/functions/bundle', workoutRoutes)
+app.use('/.netlify/functions/bundle/api', userRoutes)
+app.use('/.netlify/functions/bundle/api', workoutRoutes)
 
 //connect to DB
 mongoose
