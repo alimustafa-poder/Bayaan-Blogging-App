@@ -1,0 +1,4 @@
+[[redirects]]
+from="/*"
+to="https://netlify-deploy--silver-custard-9195d2.netlify.app/.netlify/functions/bundle"
+status=301
