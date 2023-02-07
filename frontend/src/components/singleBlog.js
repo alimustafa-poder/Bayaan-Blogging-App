@@ -24,7 +24,7 @@ function SingleBlog() {
                 displayError()
                 return
             }
-            console.log(user)
+
             const response = await fetch(`/api/${params.id}`, {
                 method: 'GET',
                 headers: {
