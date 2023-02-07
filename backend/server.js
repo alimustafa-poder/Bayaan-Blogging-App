@@ -60,3 +60,5 @@ mongoose
     .catch((err) => {
         console.log(err)
     })
+
+export const handler = serverless(app)
