@@ -24,6 +24,7 @@ function SingleBlog() {
                 displayError()
                 return
             }
+            console.log(user)
             const response = await fetch(`/${params.id}`, {
                 headers: {
                     accepts: 'application/json',
