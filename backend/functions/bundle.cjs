@@ -551,8 +551,8 @@ app.use(external_morgan_default()('dev'));
 app.use(external_cors_default()());
 
 //routes
-app.use('/.netlify/functions/bundle', router_user);
-app.use('/.netlify/functions/bundle', workout);
+app.use('/.netlify/functions/bundle/api', router_user);
+app.use('/.netlify/functions/bundle/api', workout);
 
 //connect to DB
 external_mongoose_default.a.connect(process.env.MONG_URI).then(data => {
