@@ -4,7 +4,7 @@ import validator from 'validator'
 import { useLogin } from '../../hooks/useLogin'
 
 function LoginForm() {
-    const { login, error } = useLogin()
+    const { login, error, loading } = useLogin()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -27,6 +27,14 @@ function LoginForm() {
         }
         const data = new FormData(e.target)
         await login(data)
+    }
+
+    if (loading) {
+        return (
+            <div className="flex grow flex-row justify-center items-center">
+                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+            </div>
+        )
     }
 
     return (

@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faTrashCan,
-    faEdit,
-    faSpinner,
-} from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan, faEdit } from '@fortawesome/free-solid-svg-icons'
 import Modal from './modal'
 import ErrorModal from './errorModal'
 import { useAuthContext } from '../hooks/useAuth'
@@ -36,6 +32,7 @@ function SingleBlog() {
             if (response.status !== 200) {
                 setError(json.error)
                 displayError()
+                return
             } else {
                 setBlog(json)
             }
@@ -60,11 +57,8 @@ function SingleBlog() {
 
     if (blog == null && !error) {
         return (
-            <div className="flex grow flex-row justify-center items-center text-3xl sm:text-7xl">
-                <FontAwesomeIcon
-                    icon={faSpinner}
-                    className="animate-spin max-w-fit max-h-fit"
-                />
+            <div className="flex grow flex-row justify-center items-center">
+                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
             </div>
         )
     }
