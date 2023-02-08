@@ -13,7 +13,7 @@ function App() {
             <Nav />
             <Routes>
                 <Route path="/" element={<Homepage />} />
-                <Route path="/api/:id" element={<SingleBlog />} />
+                <Route path="/:id" element={<SingleBlog />} />
                 <Route path="/createBlog" element={<CreateBlog />} />
                 <Route path="/:id/edit" element={<EditBlogs />} />
                 <Route path="/signup" element={<SignupForm />} />
