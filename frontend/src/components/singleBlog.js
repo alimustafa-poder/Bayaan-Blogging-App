@@ -45,6 +45,7 @@ function SingleBlog() {
     }, [params.id, user])
 
     function displayError() {
+        if (!document.querySelector('#errorModal')) return
         document.querySelector('#errorModal').classList.remove('scale-0')
         setTimeout(
             () =>
