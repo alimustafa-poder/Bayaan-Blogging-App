@@ -1,9 +1,4 @@
 [[redirects]]
-from = "/SingleBlog/*"
-to = "/index.html/SingleBlog/:splat"
-status = 200
-
-[[redirects]]
 from = "/api/*"
 to = "https://silver-custard-9195d2.netlify.app/.netlify/functions/bundle/api/:splat"
 status = 200
