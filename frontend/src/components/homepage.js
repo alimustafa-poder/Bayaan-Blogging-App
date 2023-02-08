@@ -83,7 +83,7 @@ function Homepage() {
                 {blog &&
                     blog.map((elem) => (
                         <Link
-                            to={`/SingleBlog`}
+                            to={`/SingleBlog/${elem._id}`}
                             key={elem._id}
                             onClick={SingleBlog}
                         >

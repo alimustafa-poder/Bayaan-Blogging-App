@@ -35,7 +35,7 @@ function CreateBlog() {
         })
         const json = await response.json()
         if (response.status === 200) {
-            return navigate(`/${json.test._id}`)
+            return navigate(`/SingleBlog/${json.test._id}`)
         } else {
             displayError()
             new Promise((resolve, reject) => resolve(setError(json.error)))
