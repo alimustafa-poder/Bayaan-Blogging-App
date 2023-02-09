@@ -1,7 +1,10 @@
 import { useAuthContext } from '../hooks/useAuth'
+import { Remarkable } from 'remarkable'
 
 function BlogDetails({ props }) {
+    const md = new Remarkable()
     const { user } = useAuthContext()
+
     if (user.email !== props.email) return
     return (
         <div
@@ -11,7 +14,10 @@ function BlogDetails({ props }) {
             <h2 className="sm:text-3xl font-bold text-red-500">
                 {props.title}
             </h2>
-            <p className="truncate">{props.body}</p>
+            <div
+                className="truncate text-gray-700"
+                dangerouslySetInnerHTML={{ __html: md.render(props.body) }}
+            ></div>
         </div>
     )
 }

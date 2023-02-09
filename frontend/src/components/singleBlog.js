@@ -5,6 +5,7 @@ import { faTrashCan, faEdit } from '@fortawesome/free-solid-svg-icons'
 import Modal from './modal'
 import ErrorModal from './errorModal'
 import { useAuthContext } from '../hooks/useAuth'
+import { Remarkable } from 'remarkable'
 
 function SingleBlog() {
     const params = useParams()
@@ -12,6 +13,7 @@ function SingleBlog() {
     const [blog, setBlog] = useState(null)
     const [error, setError] = useState(null)
     const { user } = useAuthContext()
+    const md = new Remarkable()
 
     useEffect(() => {
         async function getSingleBlog() {
@@ -58,7 +60,7 @@ function SingleBlog() {
     if (blog == null && !error) {
         return (
             <div className="flex grow flex-row justify-center items-center">
-                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+                <div className="animate-spin rounded-full h-28 w-28 border-b-2 border-gray-900"></div>
             </div>
         )
     }
@@ -154,9 +156,12 @@ function SingleBlog() {
                             </p>
                         </div>
                     </div>
-                    <div className="font-serif text-xl my-2 sm:my-1">
-                        <p className="break-all">{blog.body}</p>
-                    </div>
+                    <div
+                        className="font-serif text-xl my-2 sm:my-1 break-all"
+                        dangerouslySetInnerHTML={{
+                            __html: md.render(blog.body),
+                        }}
+                    ></div>
                 </div>
             </div>
             <Modal />

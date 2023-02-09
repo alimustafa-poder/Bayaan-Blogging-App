@@ -13,7 +13,7 @@ function Nav() {
 
     return (
         <>
-            <div className="flex justify-between sm:text-lg text-wrap p-5 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 sm:shadow-xl">
+            <div className="flex flex-row w-full justify-between sm:text-lg text-wrap p-5 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 sm:shadow-xl">
                 <Link to="/">
                     <h1 className="sm:text-4xl sm:font-black text-white">
                         Bayaan

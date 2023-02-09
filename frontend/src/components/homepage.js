@@ -79,7 +79,7 @@ function Homepage() {
         )
     } else {
         return (
-            <div>
+            <div className="p-2">
                 {blog &&
                     blog.map((elem) => (
                         <Link

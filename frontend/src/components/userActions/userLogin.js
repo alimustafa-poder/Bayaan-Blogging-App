@@ -32,7 +32,7 @@ function LoginForm() {
     if (loading) {
         return (
             <div className="flex grow flex-row justify-center items-center">
-                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+                <div className="animate-spin rounded-full h-24 w-24 border-b-2 border-gray-900"></div>
             </div>
         )
     }
@@ -45,7 +45,7 @@ function LoginForm() {
                     onSubmit={handleSubmit}
                 >
                     <div>
-                        <label for="email" className="font-bold">
+                        <label htmlFor="email" className="font-bold">
                             Enter your email:
                         </label>
                         <input
@@ -60,7 +60,7 @@ function LoginForm() {
                         ></input>
                     </div>
                     <div>
-                        <label for="password" className="font-bold">
+                        <label htmlFor="password" className="font-bold">
                             Enter your password:
                         </label>
                         <input
