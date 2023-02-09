@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export function PreAuthHomepage() {
     return (
         <div className="flex flex-col">
@@ -17,9 +19,11 @@ export function PreAuthHomepage() {
                     Lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem
                     ipsum dolor lorem ipsum dolor lorem ipsum dolor.
                 </p>
-                <button className="bg-red-400 p-3 rounded-md text-xl animate-float">
-                    Let's Go.
-                </button>
+                <Link to={'/signup'}>
+                    <button className="bg-red-400 p-3 rounded-md text-xl animate-float">
+                        Let's Go.
+                    </button>
+                </Link>
             </div>
             <div className="flex flex-row h-48 mt-3 p-4 bg-pink-200 text-black items-center align-center">
                 <p className="text-3xl mx-6 font-bold animate-fontColor text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 animate-fontColor">

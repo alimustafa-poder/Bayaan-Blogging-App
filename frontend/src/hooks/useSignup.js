@@ -18,6 +18,7 @@ export const useSignup = () => {
         const json = await response.json()
 
         if (response.status === 200) {
+            setisLoading(false)
             localStorage.setItem('user', JSON.stringify(json))
             dispatch({ type: 'LOGIN', payload: json })
             navigate('/')
