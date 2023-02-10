@@ -34,7 +34,6 @@ function SingleBlog() {
             if (response.status !== 200) {
                 setError(json.error)
                 displayError()
-                return
             } else {
                 setBlog(json)
             }
@@ -44,8 +43,14 @@ function SingleBlog() {
     }, [params.id, user])
 
     function displayError() {
-        if (!document.querySelector('#errorModal')) return
-        document.querySelector('#errorModal').classList.remove('scale-0')
+        setTimeout(
+            () =>
+                document
+                    .querySelector('#errorModal')
+                    .classList.remove('scale-0'),
+            1000
+        )
+
         setTimeout(
             () =>
                 document.querySelector('#errorModal').classList.add('scale-0'),
