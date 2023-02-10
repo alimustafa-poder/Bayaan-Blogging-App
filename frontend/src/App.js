@@ -6,6 +6,7 @@ import CreateBlog from './components/createNewBlog'
 import EditBlogs from './components/editBlogs'
 import SignupForm from './components/userActions/userSignUp'
 import LoginForm from './components/userActions/userLogin'
+import Page404 from './components/ErrorPage/404'
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/:id/edit" element={<EditBlogs />} />
                 <Route path="/signup" element={<SignupForm />} />
                 <Route path="/login" element={<LoginForm />} />
+                <Route path="*" element={<Page404 />} />
             </Routes>
         </BrowserRouter>
     )
