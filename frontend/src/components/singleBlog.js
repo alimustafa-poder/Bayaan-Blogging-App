@@ -98,6 +98,7 @@ function SingleBlog() {
         document.addEventListener('mousedown', x)
 
         function x(e) {
+            if (modal.contains(e.target)) return
             document.removeEventListener('mousedown', x)
 
             if (e.target.closest('div').id === 'trashCan') return
