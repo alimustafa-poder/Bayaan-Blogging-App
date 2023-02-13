@@ -98,16 +98,19 @@ function SingleBlog() {
         document.addEventListener('mousedown', x)
 
         function x(e) {
+            if (modal.contains(e.target)) {
+                if (e.target.textContent === 'OK') {
+                    handleDelete()
+                }
+                if (e.target.textContent === 'Cancel') {
+                    modal.classList.add('scale-0')
+                }
+                return
+            }
             document.removeEventListener('mousedown', x)
 
             if (e.target.closest('div').id === 'trashCan') return
             if (!modal.contains(e.target)) {
-                modal.classList.add('scale-0')
-            }
-            if (e.target.textContent === 'OK') {
-                handleDelete()
-            }
-            if (e.target.textContent === 'Cancel') {
                 modal.classList.add('scale-0')
             }
         }

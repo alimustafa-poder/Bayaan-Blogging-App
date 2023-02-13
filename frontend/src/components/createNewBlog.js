@@ -7,6 +7,7 @@ function CreateBlog() {
     const navigate = useNavigate()
     const [error, setError] = useState('')
     const { user } = useAuthContext()
+    const [loading, setLoading] = useState(false)
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -24,7 +25,7 @@ function CreateBlog() {
                 return
             }
         }
-
+        setLoading(true)
         const response = await fetch('/api', {
             method: 'POST',
             headers: {
@@ -35,6 +36,7 @@ function CreateBlog() {
         })
         const json = await response.json()
         if (response.status === 200) {
+            setLoading(false)
             return navigate(`/${json.test._id}`)
         } else {
             displayError()
@@ -57,6 +59,7 @@ function CreateBlog() {
                 <button
                     type="submit"
                     className="p-1 sm:p-2 bg-red-500 px-4 sm:px-8 sm:text-md tracking-wider sm:tracking-widest sm:text-xl float-right"
+                    disabled={loading}
                 >
                     Post
                 </button>

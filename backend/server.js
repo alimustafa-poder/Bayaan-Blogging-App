@@ -45,8 +45,12 @@ app.use(morgan('dev'))
 app.use(cors())
 
 //routes
+
 app.use('/api', userRoutes)
 app.use('/api', workoutRoutes)
+app.all('*', (req, res) => {
+    res.status(404).send({ message: 'Invalid Route' })
+})
 
 //connect to DB
 mongoose
