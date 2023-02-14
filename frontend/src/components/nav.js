@@ -20,7 +20,6 @@ function Nav() {
         if (sidebar.contains(e.target)) return
         if (e.target.classList.contains('sidebar')) return
         sidebar.classList.remove('w-48')
-        document.removeEventListener('mousedown', closeSideBar)
     }
 
     return (
