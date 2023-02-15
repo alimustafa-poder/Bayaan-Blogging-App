@@ -121,7 +121,7 @@ function SingleBlog() {
 
     return (
         <>
-            <div className="flex flex-col grow rounded-md dark:bg-slate-800 dark:p-2">
+            <div className="flex flex-col grow rounded-md dark:bg-slate-800 dark:p-2 transition-all">
                 <div className="flex flex-row justify-between items-center">
                     <h1 className="text-xl sm:text-3xl text-red-800 font-bold my-2 sm:my-3 dark:text-white">
                         {blog.title}

@@ -15,7 +15,7 @@ function BlogDetails({ props }) {
                 {props.title}
             </h2>
             <div
-                className="truncate text-gray-700 dark:text-white"
+                className="truncate text-gray-700 dark:text-white transition-all"
                 dangerouslySetInnerHTML={{ __html: md.render(props.body) }}
             ></div>
         </div>

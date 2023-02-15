@@ -4,7 +4,7 @@ function ErrorModal({ props }) {
             id="errorModal"
             className="flex flex-row justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 duration-300 ease-out delay-300"
         >
-            <div className="rounded-md bg-white tracking-widest flex flex-col justify-center items-center border-2 border-none w-fit gap-y-1 p-3 dark:border-white dark:bg-slate-600">
+            <div className="rounded-md bg-white tracking-widest flex flex-col justify-center items-center border-2 border-none w-fit gap-y-1 p-3 dark:border-white dark:bg-slate-600 transition-all">
                 <h1 className="font-bold text-red-400 text-2xl">
                     {props.errorName}
                 </h1>

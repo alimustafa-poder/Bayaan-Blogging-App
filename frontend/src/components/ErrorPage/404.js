@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function Page404() {
     //not found page
     return (
-        <div className="flex flex-col items-center justify-center h-screen gap-y-6 dark:bg-slate-800">
+        <div className="flex flex-col items-center justify-center h-screen gap-y-6 dark:bg-slate-800 transition-all">
             <h1 className="text-4xl sm:text-7xl text-red-400">
                 404: Page not found
             </h1>

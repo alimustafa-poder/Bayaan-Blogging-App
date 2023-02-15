@@ -27,21 +27,24 @@ function SignupForm() {
     return (
         <>
             <div
-                className="flex flex-col grow items-center justify-center w-full"
+                className="flex flex-col grow items-center justify-center w-full dark:bg-slate-800"
                 style={{ display: loading ? 'none' : 'flex' }}
             >
                 <form
-                    className="flex flex-col gap-y-2 p-12 w-80 items-center align-center gap-y-5 border-2 border-red-200 rounded-md shadow-md bg-zinc-100"
+                    className="flex flex-col gap-y-2 p-12 w-80 items-center align-center gap-y-5 border-2 border-red-200 rounded-md shadow-md bg-zinc-100 dark:bg-slate-700 dark:border-none"
                     onSubmit={handleSubmit}
                 >
                     <div>
-                        <label htmlFor="email" className="font-bold">
+                        <label
+                            htmlFor="email"
+                            className="font-bold dark:text-white"
+                        >
                             Enter your email:
                         </label>
                         <input
                             type="email"
                             placeholder="xyz@email.com"
-                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-full text-xl sm:text-2xl bg-zinc-100 rounded-md border-red-200 shadow-md"
+                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-full text-base sm:text-base bg-zinc-100 rounded-md border-red-200 shadow-md"
                             name="email"
                             id="email"
                             onChange={() => {
@@ -62,7 +65,10 @@ function SignupForm() {
                         )}
                     </div>
                     <div>
-                        <label htmlFor="password" className="font-bold">
+                        <label
+                            htmlFor="password"
+                            className="font-bold dark:text-white"
+                        >
                             Enter your password:
                         </label>
                         <input
@@ -95,7 +101,10 @@ function SignupForm() {
                     </button>
                 </form>
                 <div className="text-start">
-                    <Link to="/login" className="text-red-500 text-start">
+                    <Link
+                        to="/login"
+                        className="text-red-500 text-start dark:text-white dark:font-bold"
+                    >
                         Already have an account? Login.
                     </Link>
                 </div>

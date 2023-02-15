@@ -27,7 +27,7 @@ function Nav() {
     return (
         <>
             <SideBar />
-            <div className="flex flex-row w-full justify-between sm:text-lg text-wrap p-5 rounded-md bg-blue-400 sm:shadow-xl dark:bg-slate-700 dark:rounded-none">
+            <div className="flex flex-row w-full justify-between sm:text-lg text-wrap p-5 rounded-md bg-blue-400 sm:shadow-xl dark:bg-slate-700 dark:rounded-none transition-all">
                 <div className="flex flex-row items-center burgerMenu">
                     <FontAwesomeIcon
                         icon={faBars}
