@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 export default function SideBar() {
     //sidebar
     return (
-        <div className="sidebar flex flex-col fixed w-0 bg-gray-200 h-screen left-0 top-0 pt-5 z-10 transition-all duration-700 overflow-x-hidden shrink">
+        <div className="sidebar flex flex-col fixed w-0 bg-gray-200 h-screen left-0 top-0 pt-5 z-10 transition-all duration-700 overflow-x-hidden shrink dark:bg-slate-800">
             <div className="flex flex-row justify-end pr-4">
                 <FontAwesomeIcon
                     icon={faClose}
-                    className="text-red-400 cursor-pointer float-right text-3xl hover:text-black"
+                    className="text-red-400 cursor-pointer float-right text-3xl hover:text-black dark:text-white dark:hover:text-red-400"
                     onClick={() => {
                         document
                             .querySelector('.sidebar')

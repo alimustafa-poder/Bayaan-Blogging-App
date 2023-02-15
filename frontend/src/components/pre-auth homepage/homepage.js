@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export function PreAuthHomepage() {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col grow dark:bg-slate-800">
             <div className="flex flex-row gap-x-4 tracking-wide h-28 text-xl sm:text-6xl md:text-7xl  justify-center items-center mt-5 font-extrabold">
                 <span className="animate- bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
                     Think.
@@ -15,7 +15,7 @@ export function PreAuthHomepage() {
                 </span>
             </div>
             <div className="flex flex-col align-center items-center tracking-wide gap-y-3">
-                <p className="font-bold">
+                <p className="font-bold p-2 text-center dark:text-white">
                     Lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem
                     ipsum dolor lorem ipsum dolor lorem ipsum dolor.
                 </p>
@@ -25,7 +25,7 @@ export function PreAuthHomepage() {
                     </button>
                 </Link>
             </div>
-            <div className="flex flex-row h-48 mt-3 p-4 bg-pink-200 text-black items-center align-center">
+            <div className="flex flex-row h-48 mt-3 p-4 bg-pink-200 text-black items-center align-center dark:bg-slate-800">
                 <p className="text-3xl mx-6 font-bold animate-fontColor text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 animate-fontColor">
                     Shape the World
                 </p>

@@ -1,5 +1,6 @@
 import Nav from './components/nav'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
 import Homepage from './components/homepage'
 import SingleBlog from './components/singleBlog'
 import CreateBlog from './components/createNewBlog'
@@ -10,8 +11,14 @@ import Page404 from './components/ErrorPage/404'
 import Profile from './components/userProfile/profile'
 import Drafts from './components/drafts'
 import Deleted from './components/deleted'
+import { useThemeContext } from './hooks/useTheme'
 
 function App() {
+    const { theme } = useThemeContext()
+    useEffect(() => {
+        localStorage.setItem('theme', theme)
+        document.documentElement.classList.add(theme)
+    })
     return (
         <BrowserRouter>
             <Nav />

@@ -9,13 +9,13 @@ function BlogDetails({ props }) {
     return (
         <div
             id={props._id}
-            className="flex flex-col bg-gray-300 p-2 rounded-md mt-2 w-full"
+            className="flex flex-col bg-gray-300 p-2 rounded-md mt-2 w-full dark:bg-slate-800"
         >
-            <h2 className="sm:text-3xl font-bold text-red-500">
+            <h2 className="sm:text-3xl font-bold text-red-500 dark:text-green-300">
                 {props.title}
             </h2>
             <div
-                className="truncate text-gray-700"
+                className="truncate text-gray-700 dark:text-white"
                 dangerouslySetInnerHTML={{ __html: md.render(props.body) }}
             ></div>
         </div>

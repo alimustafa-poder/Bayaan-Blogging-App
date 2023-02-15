@@ -44,11 +44,10 @@ function EditBlogs() {
 
     function displayError() {
         document.querySelector('#errorModal').classList.remove('scale-0')
-        setTimeout(
-            () =>
-                document.querySelector('#errorModal').classList.add('scale-0'),
-            2000
-        )
+        setTimeout(() => {
+            if (!document.querySelector('#errorModal')) return
+            document.querySelector('#errorModal').classList.add('scale-0')
+        }, 2000)
     }
 
     async function handleSubmit(e) {
@@ -101,7 +100,7 @@ function EditBlogs() {
             <form onSubmit={(e) => handleSubmit(e)}>
                 <button
                     type="submit"
-                    className="p-1 sm:p-2 bg-red-500 px-4 sm:px-8 sm:text-md tracking-wider sm:tracking-widest sm:text-xl float-right"
+                    className="p-1 sm:p-2 bg-red-500 px-4 sm:px-8 sm:text-md tracking-wider sm:tracking-widest sm:text-xl float-right dark:bg-red-400 dark:text-white dark:font-bold dark:shadow-md"
                 >
                     Update Blog
                 </button>
@@ -110,7 +109,7 @@ function EditBlogs() {
                     id="title"
                     type="text"
                     placeholder="Enter a title here."
-                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 p-2 sm:p-4 w-full text-xl sm:text-2xl bg-zinc-100 mt-2 shadow-md"
+                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 p-2 sm:p-4 w-full text-xl sm:text-2xl bg-zinc-100 mt-2 shadow-md dark:bg-slate-800 dark:text-white dark:placeholder-white"
                     value={title}
                     onChange={() =>
                         setTitle(document.querySelector('#title').value.trim())
@@ -121,7 +120,7 @@ function EditBlogs() {
                     id="author"
                     type="text"
                     placeholder="Author"
-                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 p-2 sm:p-4 w-full text-xl sm:text-2xl bg-zinc-100 mt-2 shadow-md"
+                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 p-2 sm:p-4 w-full text-xl sm:text-2xl bg-zinc-100 mt-2 shadow-md dark:bg-slate-800 dark:text-white dark:placeholder-white"
                     value={author}
                     onChange={() =>
                         setAuthor(
@@ -134,7 +133,7 @@ function EditBlogs() {
                     id="body"
                     type="text"
                     placeholder="Enter body text."
-                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 p-2 sm:p-4 text-xl sm:text-2xl bg-zinc-100 shadow-md h-96 w-full"
+                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 p-2 sm:p-4 text-xl sm:text-2xl bg-zinc-100 shadow-md h-96 w-full dark:bg-slate-800 dark:text-white dark:placeholder-white"
                     value={body}
                     onChange={() =>
                         setBody(document.querySelector('#body').value.trim())

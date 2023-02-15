@@ -6,6 +6,7 @@ import Modal from './modal'
 import ErrorModal from './errorModal'
 import { useAuthContext } from '../hooks/useAuth'
 import { Remarkable } from 'remarkable'
+import { useThemeContext } from '../hooks/useTheme'
 
 function SingleBlog() {
     const params = useParams()
@@ -14,8 +15,10 @@ function SingleBlog() {
     const [error, setError] = useState(null)
     const { user } = useAuthContext()
     const md = new Remarkable()
+    const { theme } = useThemeContext()
 
     useEffect(() => {
+        document.documentElement.classList.add(theme)
         async function getSingleBlog() {
             if (!user) {
                 setError('You are not logged in.')
@@ -40,7 +43,7 @@ function SingleBlog() {
         }
 
         getSingleBlog()
-    }, [params.id, user])
+    }, [params.id, user, theme])
 
     function displayError() {
         setTimeout(
@@ -118,16 +121,16 @@ function SingleBlog() {
 
     return (
         <>
-            <div className="flex flex-col grow">
+            <div className="flex flex-col grow rounded-md dark:bg-slate-800 dark:p-2">
                 <div className="flex flex-row justify-between items-center">
-                    <h1 className="text-xl sm:text-3xl text-red-800 font-bold my-2 sm:my-3">
+                    <h1 className="text-xl sm:text-3xl text-red-800 font-bold my-2 sm:my-3 dark:text-white">
                         {blog.title}
                     </h1>
                     <div className="flex flex-row space-x-5">
                         <div id="trashCan">
                             <FontAwesomeIcon
                                 icon={faTrashCan}
-                                className="text-xl sm:text-2xl text-red-500 cursor-pointer"
+                                className="text-xl sm:text-2xl text-red-500 cursor-pointer dark:text-white"
                                 onClick={handleModal}
                             />
                         </div>
@@ -135,7 +138,7 @@ function SingleBlog() {
                             <div id="editIcon">
                                 <FontAwesomeIcon
                                     icon={faEdit}
-                                    className="text-xl sm:text-2xl text-gray-800 cursor-pointer"
+                                    className="text-xl sm:text-2xl text-gray-800 cursor-pointer dark:text-white"
                                 />
                             </div>
                         </Link>
@@ -143,29 +146,31 @@ function SingleBlog() {
                 </div>
                 <div className="flex flex-col grow gap-y-1 p-y-1 flex-wrap">
                     <div className="flex flex-row text-xs">
-                        <p className="font-bold text-gray-600">Author:</p>
-                        <p className="px-3">{blog.author}</p>
+                        <p className="font-bold text-gray-600 dark:text-white">
+                            Author:
+                        </p>
+                        <p className="px-3 dark:text-white">{blog.author}</p>
                     </div>
                     <div className="flex flex-col sm:flex-row text-xs">
                         <div className="flex flex-row">
-                            <p className="font-bold text-gray-600">
+                            <p className="font-bold text-gray-600 dark:text-white">
                                 Created at:
                             </p>
-                            <p className="px-3 italic">
+                            <p className="px-3 italic dark:text-white">
                                 {new Date(blog.createdAt).toLocaleString()}
                             </p>
                         </div>
                         <div className="flex flex-row">
-                            <p className="font-bold text-gray-600">
+                            <p className="font-bold text-gray-600 dark:text-white">
                                 Last Updated at:
                             </p>
-                            <p className="px-3 italic">
+                            <p className="px-3 italic dark:text-white">
                                 {new Date(blog.updatedAt).toLocaleString()}
                             </p>
                         </div>
                     </div>
                     <div
-                        className="font-serif text-xl my-2 sm:my-1 break-all"
+                        className="font-serif text-xl my-2 sm:my-1 break-all dark:text-white"
                         dangerouslySetInnerHTML={{
                             __html: md.render(blog.body),
                         }}

@@ -10,7 +10,9 @@ export const useLogout = () => {
 
     // This is a hack to force the page to reload when the user logs out
     window.addEventListener('storage', (e) => {
-        window.location.href = '/'
+        if (e.key === 'user') {
+            window.location.href = '/'
+        }
     })
 
     return { logout }
