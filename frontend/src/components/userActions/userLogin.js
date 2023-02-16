@@ -31,8 +31,8 @@ function LoginForm() {
 
     if (loading) {
         return (
-            <div className="flex grow flex-row justify-center items-center">
-                <div className="animate-spin rounded-full h-24 w-24 border-b-2 border-gray-900"></div>
+            <div className="flex grow flex-row justify-center items-center dark:bg-slate-800">
+                <div className="animate-spin rounded-full h-24 w-24 border-b-2 border-gray-900 dark:border-white"></div>
             </div>
         )
     }

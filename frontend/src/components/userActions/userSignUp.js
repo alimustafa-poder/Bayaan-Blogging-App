@@ -24,6 +24,14 @@ function SignupForm() {
         await signup(data)
     }
 
+    if (loading) {
+        return (
+            <div className="flex grow flex-row justify-center items-center dark:bg-slate-800">
+                <div className="animate-spin rounded-full h-20 w-20 border-b-2 border-gray-900 dark:border-white"></div>
+            </div>
+        )
+    }
+
     return (
         <>
             <div
@@ -44,7 +52,7 @@ function SignupForm() {
                         <input
                             type="email"
                             placeholder="xyz@email.com"
-                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-full text-base sm:text-base bg-zinc-100 rounded-md border-red-200 shadow-md"
+                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-60 text-base sm:text-base bg-zinc-100 rounded-md border-red-200 shadow-md"
                             name="email"
                             id="email"
                             onChange={() => {
@@ -73,7 +81,7 @@ function SignupForm() {
                         </label>
                         <input
                             type="password"
-                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-full text-base sm:text-base bg-zinc-100 rounded-md border-red-200 shadow-md"
+                            className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 w-60 text-base sm:text-base bg-zinc-100 rounded-md border-red-200 shadow-md"
                             name="password"
                             id="password"
                             placeholder="Enter your password"
@@ -108,12 +116,6 @@ function SignupForm() {
                         Already have an account? Login.
                     </Link>
                 </div>
-            </div>
-            <div
-                className="flex grow flex-row justify-center items-center absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2]"
-                style={{ display: loading ? 'flex' : 'none' }}
-            >
-                <div className="animate-spin rounded-full h-20 w-20 border-b-2 border-gray-900"></div>
             </div>
         </>
     )

@@ -11,6 +11,7 @@ import Page404 from './components/ErrorPage/404'
 import Profile from './components/userProfile/profile'
 import Drafts from './components/drafts'
 import Deleted from './components/deleted'
+import ArchivedBlogs from './components/archive'
 import { useThemeContext } from './hooks/useTheme'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/login" element={<LoginForm />} />
                 <Route path="/drafts" element={<Drafts />} />
                 <Route path="/deleted" element={<Deleted />} />
+                <Route path="/archive" element={<ArchivedBlogs />} />
                 <Route path="*" element={<Page404 />} />
             </Routes>
         </BrowserRouter>

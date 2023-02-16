@@ -67,8 +67,8 @@ function SingleBlog() {
 
     if (blog == null && !error) {
         return (
-            <div className="flex grow flex-row justify-center items-center">
-                <div className="animate-spin rounded-full h-28 w-28 border-b-2 border-gray-900"></div>
+            <div className="flex grow flex-row justify-center items-center dark:bg-slate-800">
+                <div className="animate-spin rounded-full h-28 w-28 border-b-2 border-gray-900 dark:border-white"></div>
             </div>
         )
     }
@@ -121,60 +121,64 @@ function SingleBlog() {
 
     return (
         <>
-            <div className="flex flex-col grow rounded-md dark:bg-slate-800 dark:p-2 transition-all">
-                <div className="flex flex-row justify-between items-center">
-                    <h1 className="text-xl sm:text-3xl text-red-800 font-bold my-2 sm:my-3 dark:text-white">
-                        {blog.title}
-                    </h1>
-                    <div className="flex flex-row space-x-5">
-                        <div id="trashCan">
-                            <FontAwesomeIcon
-                                icon={faTrashCan}
-                                className="text-xl sm:text-2xl text-red-500 cursor-pointer dark:text-white"
-                                onClick={handleModal}
-                            />
-                        </div>
-                        <Link to={`/${params.id}/edit`}>
-                            <div id="editIcon">
+            <div className="flex flex-col grow dark:bg-slate-800 dark:p-2 transition-all justify-center items-center">
+                <div className="flex flex-col grow w-[50%]">
+                    <div className="flex flex-row justify-between items-center">
+                        <h1 className="text-xl sm:text-5xl text-red-800 font-bold my-2 sm:my-3 dark:text-white">
+                            {blog.title}
+                        </h1>
+                        <div className="flex flex-row space-x-5">
+                            <div id="trashCan">
                                 <FontAwesomeIcon
-                                    icon={faEdit}
-                                    className="text-xl sm:text-2xl text-gray-800 cursor-pointer dark:text-white"
+                                    icon={faTrashCan}
+                                    className="text-xl sm:text-2xl text-red-500 cursor-pointer dark:text-white dark:hover:text-red-500"
+                                    onClick={handleModal}
                                 />
                             </div>
-                        </Link>
-                    </div>
-                </div>
-                <div className="flex flex-col grow gap-y-1 p-y-1 flex-wrap">
-                    <div className="flex flex-row text-xs">
-                        <p className="font-bold text-gray-600 dark:text-white">
-                            Author:
-                        </p>
-                        <p className="px-3 dark:text-white">{blog.author}</p>
-                    </div>
-                    <div className="flex flex-col sm:flex-row text-xs">
-                        <div className="flex flex-row">
-                            <p className="font-bold text-gray-600 dark:text-white">
-                                Created at:
-                            </p>
-                            <p className="px-3 italic dark:text-white">
-                                {new Date(blog.createdAt).toLocaleString()}
-                            </p>
-                        </div>
-                        <div className="flex flex-row">
-                            <p className="font-bold text-gray-600 dark:text-white">
-                                Last Updated at:
-                            </p>
-                            <p className="px-3 italic dark:text-white">
-                                {new Date(blog.updatedAt).toLocaleString()}
-                            </p>
+                            <Link to={`/${params.id}/edit`}>
+                                <div id="editIcon">
+                                    <FontAwesomeIcon
+                                        icon={faEdit}
+                                        className="text-xl sm:text-2xl text-gray-800 cursor-pointer dark:text-white"
+                                    />
+                                </div>
+                            </Link>
                         </div>
                     </div>
-                    <div
-                        className="font-serif text-xl my-2 sm:my-1 break-all dark:text-white"
-                        dangerouslySetInnerHTML={{
-                            __html: md.render(blog.body),
-                        }}
-                    ></div>
+                    <div className="flex flex-col grow gap-y-1 p-y-1 flex-wrap">
+                        <div className="flex flex-row text-xs">
+                            <p className="font-bold text-gray-600 dark:text-white">
+                                Author:
+                            </p>
+                            <p className="px-3 dark:text-white">
+                                {blog.author}
+                            </p>
+                        </div>
+                        <div className="flex flex-col sm:flex-row text-xs">
+                            <div className="flex flex-row">
+                                <p className="font-bold text-gray-600 dark:text-white">
+                                    Created at:
+                                </p>
+                                <p className="px-3 italic dark:text-white">
+                                    {new Date(blog.createdAt).toLocaleString()}
+                                </p>
+                            </div>
+                            <div className="flex flex-row">
+                                <p className="font-bold text-gray-600 dark:text-white">
+                                    Last Updated at:
+                                </p>
+                                <p className="px-3 italic dark:text-white">
+                                    {new Date(blog.updatedAt).toLocaleString()}
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            className="font-serif text-xl my-2 sm:my-1 break-all dark:text-white"
+                            dangerouslySetInnerHTML={{
+                                __html: md.render(blog.body),
+                            }}
+                        ></div>
+                    </div>
                 </div>
             </div>
             <Modal />

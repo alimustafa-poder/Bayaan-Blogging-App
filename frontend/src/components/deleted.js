@@ -11,8 +11,10 @@ export default function Deleted() {
         }
     })
     return (
-        <div className="flex flex-col justify-center items-center h-screen">
-            <h1 className="text-4xl font-bold">Development in progress...</h1>
+        <div className="flex flex-col justify-center items-center h-screen dark:bg-slate-800">
+            <h1 className="text-4xl font-bold dark:text-white">
+                Development in progress...
+            </h1>
         </div>
     )
 }

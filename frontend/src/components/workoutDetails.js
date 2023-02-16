@@ -9,7 +9,7 @@ function BlogDetails({ props }) {
     return (
         <div
             id={props._id}
-            className="flex flex-col bg-gray-300 p-2 rounded-md mt-2 w-full dark:bg-slate-800"
+            className="flex flex-col bg-gray-300 p-2 rounded-md mt-2 w-full dark:bg-slate-700 dark:hover:bg-slate-600"
         >
             <h2 className="sm:text-3xl font-bold text-red-500 dark:text-green-300">
                 {props.title}
