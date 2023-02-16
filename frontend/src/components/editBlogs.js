@@ -96,8 +96,8 @@ function EditBlogs() {
     }
 
     return (
-        <div className="overflow-hidden sm:overflow-visible py-3">
-            <form onSubmit={(e) => handleSubmit(e)}>
+        <div className="flex flex-col grow overflow-hidden sm:overflow-visible py-3 items-center dark:bg-slate-600">
+            <form onSubmit={(e) => handleSubmit(e)} className="w-[70%]">
                 <button
                     type="submit"
                     className="p-1 sm:p-2 bg-red-500 px-4 sm:px-8 sm:text-md tracking-wider sm:tracking-widest sm:text-xl float-right dark:bg-red-400 dark:text-white dark:font-bold dark:shadow-md transition-all"
@@ -120,7 +120,7 @@ function EditBlogs() {
                     id="author"
                     type="text"
                     placeholder="Author"
-                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 p-2 sm:p-4 w-full text-xl sm:text-2xl bg-zinc-100 mt-2 shadow-md dark:bg-slate-800 dark:text-white dark:placeholder-white transition-all"
+                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 p-2 sm:p-4 w-full text-xl sm:text-2xl bg-zinc-100 shadow-md mt-2 dark:bg-slate-800 dark:text-white dark:placeholder-white transition-all"
                     value={author}
                     onChange={() =>
                         setAuthor(
@@ -133,7 +133,7 @@ function EditBlogs() {
                     id="body"
                     type="text"
                     placeholder="Enter body text."
-                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 p-2 sm:p-4 text-xl sm:text-2xl bg-zinc-100 shadow-md h-96 w-full dark:bg-slate-800 dark:text-white dark:placeholder-white transition-all"
+                    className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 p-2 sm:p-4 text-xl sm:text-2xl bg-zinc-100 shadow-md h-96 w-full dark:bg-slate-800 dark:text-white dark:placeholder-white mt-2 transition-all"
                     value={body}
                     onChange={() =>
                         setBody(document.querySelector('#body').value.trim())

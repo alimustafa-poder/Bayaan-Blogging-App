@@ -25,4 +25,5 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  background-color: rgb(66, 64, 64);
 }
