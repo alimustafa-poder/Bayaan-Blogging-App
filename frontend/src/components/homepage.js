@@ -73,7 +73,7 @@ function Homepage() {
         )
     } else if (!blog.length) {
         return (
-            <div className="flex flex-col grow items-center justify-center text-xl sm:text-3xl text-gray-400 subpixel-antialiased dark:bg-slate-700 dark:text-white">
+            <div className="flex flex-col grow items-center justify-center text-xl sm:text-3xl text-gray-400 subpixel-antialiased dark:bg-slate-800 dark:text-white">
                 <h1> There are no blogs to fetch.</h1>
             </div>
         )
