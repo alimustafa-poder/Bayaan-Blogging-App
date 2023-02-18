@@ -56,12 +56,12 @@ function Homepage() {
 
     if (blog == null) {
         return (
-            <div className="flex grow flex-col gap-y-4 text-3xl sm:text-7xl overflow-hidden p-2 dark:bg-slate-800">
+            <div className="flex grow flex-col items-center gap-y-4 text-3xl sm:text-7xl overflow-hidden p-2 dark:bg-slate-800">
                 {[...Array(7)].map((_, i) => {
                     return (
                         <span
                             key={i}
-                            className="h-16 rounded-md animate-pulse bg-slate-600"
+                            className="flex flex-col h-16 rounded-md animate-pulse bg-slate-600 w-[60%]"
                             style={{
                                 animationDelay: `${i * 0.05}s`,
                                 animationDuration: '1s',
@@ -79,14 +79,14 @@ function Homepage() {
         )
     } else {
         return (
-            <div className="flex flex-col grow p-2 dark:bg-slate-800">
+            <div className="flex flex-col grow p-2 dark:bg-slate-800 items-center">
                 {blog &&
                     blog.map((elem, i) => (
                         <Link
                             to={`/${elem._id}`}
                             key={elem._id}
                             onClick={SingleBlog}
-                            className="opacity-0 animate-opacity"
+                            className="flex flex-col opacity-0 animate-opacity w-[60%]"
                             style={{
                                 animationDelay: `${i * 0.5}s`,
                                 animationDuration: '1s',
