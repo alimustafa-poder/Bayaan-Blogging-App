@@ -6,7 +6,7 @@ import { useSignup } from '../../hooks/useSignup'
 function SignupForm() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { signup, error, setError, loading } = useSignup()
+    const { signup, error, loading } = useSignup()
     if (localStorage.getItem('user')) return
     const handleSubmit = async (e) => {
         e.preventDefault()
