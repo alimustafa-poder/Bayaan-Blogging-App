@@ -81,12 +81,16 @@ function Homepage() {
         return (
             <div className="flex flex-col grow p-2 dark:bg-slate-800">
                 {blog &&
-                    blog.map((elem) => (
+                    blog.map((elem, i) => (
                         <Link
                             to={`/${elem._id}`}
                             key={elem._id}
                             onClick={SingleBlog}
-                            className=""
+                            className="opacity-0 animate-opacity"
+                            style={{
+                                animationDelay: `${i * 0.5}s`,
+                                animationDuration: '1s',
+                            }}
                         >
                             <BlogDetails props={elem} />
                         </Link>
