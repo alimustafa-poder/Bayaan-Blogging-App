@@ -6,7 +6,7 @@ import { useSignup } from '../../hooks/useSignup'
 function SignupForm() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { signup, error, loading } = useSignup()
+    const { signup, error, setError, loading } = useSignup()
     if (localStorage.getItem('user')) return
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -62,13 +62,8 @@ function SignupForm() {
                                     )
                                 }}
                             ></input>
-                            {error ? (
-                                <p className="p-1 mt-1 text-red-500">{error}</p>
-                            ) : (
-                                ''
-                            )}
                             {email !== '' && !validator.isEmail(email) ? (
-                                <p className="p-1 mt-1 text-red-500">
+                                <p className="p-1 mt-1 text-red-500 font-bold">
                                     Please enter a correct email.
                                 </p>
                             ) : (
@@ -97,7 +92,7 @@ function SignupForm() {
                             ></input>
                             {password !== '' &&
                             !validator.isStrongPassword(password) ? (
-                                <p className="p-1 mt-1 text-red-500">
+                                <p className="p-1 mt-1 text-red-500 font-bold">
                                     Please choose a strong password.
                                 </p>
                             ) : (
@@ -111,6 +106,13 @@ function SignupForm() {
                         >
                             Signup
                         </button>
+                        {error ? (
+                            <p className="p-1 mt-1 text-red-500 font-bold">
+                                {error}
+                            </p>
+                        ) : (
+                            ''
+                        )}
                     </form>
                     <div className="text-center">
                         <Link

@@ -71,7 +71,50 @@ export function PreAuthHomepage() {
                     </div>
                 </div>
             </div>
-            <div></div>
+            <footer>
+                {/*footer component for my blog site*/}
+                <div className="flex flex-col justify-center items-center dark:bg-gray-200">
+                    <div className="flex flex-row justify-center items-center gap-x-8 p-5">
+                        <div className="flex flex-col justify-center items-center gap-y-2">
+                            <span className="font-bold text-xl">About</span>
+                            <span className="text-sm">About Us</span>
+                            <span className="text-sm">Contact Us</span>
+                            <span className="text-sm">Feedback</span>
+                        </div>
+                        <div className="flex flex-col justify-center items-center gap-y-2">
+                            <span className="font-bold text-xl">Services</span>
+                            <span className="text-sm">Services</span>
+                            <span className="text-sm">Pricing</span>
+                            <span className="text-sm">Support</span>
+                        </div>
+                        <div className="flex flex-col justify-center items-center gap-y-2">
+                            <span className="font-bold text-xl">Social</span>
+                            <span className="text-sm">Facebook</span>
+                            <span className="text-sm">Twitter</span>
+                            <span className="text-sm">Instagram</span>
+                        </div>
+                        <div className="flex flex-col justify-center items-center gap-y-2">
+                            <span className="font-bold text-xl">Legal</span>
+                            <span className="text-sm">Terms of Use</span>
+                            <span className="text-sm">Privacy Policy</span>
+                            <span className="text-sm">Security</span>
+                        </div>
+                        <div className="flex flex-col justify-center items-center gap-y-2">
+                            <span className="font-bold text-xl">Others</span>
+                            <span className="text-sm">FAQ</span>
+                            <span className="text-sm">Help</span>
+                            <span className="text-sm">Report</span>
+                        </div>
+                    </div>
+                    <div className="flex flex-row justify-center items-center gap-x-2 p-5">
+                        <span className="text-xs">
+                            © 2023 All Rights Reserved.
+                        </span>
+                        <span className="text-xs">Designed by</span>
+                        <span className="text-xs font-bold">Ali</span>
+                    </div>
+                </div>
+            </footer>
         </div>
     )
 }

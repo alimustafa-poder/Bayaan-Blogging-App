@@ -86,7 +86,13 @@ function LoginForm() {
                         >
                             Login
                         </button>
-                        {error ? <p className="text-red-500">{error}</p> : ''}
+                        {error ? (
+                            <p className="text-center text-red-500 font-bold">
+                                {error}
+                            </p>
+                        ) : (
+                            ''
+                        )}
                     </form>
                     <div className="text-center">
                         <Link
