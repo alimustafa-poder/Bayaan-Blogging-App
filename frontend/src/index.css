@@ -25,5 +25,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-  background-color: rgb(154, 150, 150);
+}
+
+pre{
+  overflow-x: scroll;
 }

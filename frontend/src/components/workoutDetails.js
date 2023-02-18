@@ -15,7 +15,7 @@ function BlogDetails({ props }) {
                 {props.title}
             </h2>
             <div
-                className="truncate text-gray-700 dark:text-white transition-all"
+                className="overflow-hidden text-ellipsis text-gray-700 dark:text-white transition-all max-h-24"
                 dangerouslySetInnerHTML={{ __html: md.render(props.body) }}
             ></div>
         </div>

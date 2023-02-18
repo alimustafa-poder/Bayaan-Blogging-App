@@ -122,7 +122,7 @@ function SingleBlog() {
     return (
         <>
             <div className="flex flex-col grow dark:bg-slate-800 dark:p-2 transition-all justify-center items-center">
-                <div className="flex flex-col grow w-[50%]">
+                <div className="flex flex-col grow w-[50%] overflow-hidden">
                     <div className="flex flex-row justify-between items-center">
                         <h1 className="text-xl sm:text-5xl text-red-800 font-bold my-2 sm:my-3 dark:text-white">
                             {blog.title}
@@ -145,7 +145,7 @@ function SingleBlog() {
                             </Link>
                         </div>
                     </div>
-                    <div className="flex flex-col grow gap-y-1 p-y-1 flex-wrap">
+                    <div className="flex flex-col grow gap-y-1 p-y-1">
                         <div className="flex flex-row text-xs">
                             <p className="font-bold text-gray-600 dark:text-white">
                                 Author:
