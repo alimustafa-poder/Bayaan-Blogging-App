@@ -77,6 +77,9 @@ function EditBlogs() {
             displayError()
         } else {
             const data = new FormData(e.target)
+            for (let [, value] of data.entries()) {
+                value = value.trim()
+            }
             const response = await fetch(`/api/${params.id}`, {
                 method: 'PATCH',
                 headers: {
@@ -112,7 +115,7 @@ function EditBlogs() {
                     className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 p-2 sm:p-4 w-full text-xl sm:text-2xl bg-zinc-100 mt-2 shadow-md dark:bg-slate-800 dark:text-white dark:placeholder-white transition-all"
                     value={title}
                     onChange={() =>
-                        setTitle(document.querySelector('#title').value.trim())
+                        setTitle(document.querySelector('#title').value)
                     }
                 />
                 <input
@@ -123,9 +126,7 @@ function EditBlogs() {
                     className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 required:border-red-500 invalid:border-red-500 p-2 sm:p-4 w-full text-xl sm:text-2xl bg-zinc-100 shadow-md mt-2 dark:bg-slate-800 dark:text-white dark:placeholder-white transition-all"
                     value={author}
                     onChange={() =>
-                        setAuthor(
-                            document.querySelector('#author').value.trim()
-                        )
+                        setAuthor(document.querySelector('#author').value)
                     }
                 />
                 <textarea
@@ -136,7 +137,7 @@ function EditBlogs() {
                     className="focus:border-transparent focus:ring-0 ring-0 border-transparent focus:border-red-300 p-2 sm:p-4 text-xl sm:text-2xl bg-zinc-100 shadow-md h-96 w-full dark:bg-slate-800 dark:text-white dark:placeholder-white mt-2 transition-all"
                     value={body}
                     onChange={() =>
-                        setBody(document.querySelector('#body').value.trim())
+                        setBody(document.querySelector('#body').value)
                     }
                 />
             </form>
