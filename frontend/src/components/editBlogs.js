@@ -76,10 +76,10 @@ function EditBlogs() {
             setError("Fields can't be empty.")
             displayError()
         } else {
-            const data = new FormData(e.target)
-            for (let [, value] of data.entries()) {
-                value = value.trim()
-            }
+            const data = new FormData()
+            data.append('title', title.trim())
+            data.append('body', body.trim())
+            data.append('author', author.trim())
             const response = await fetch(`/api/${params.id}`, {
                 method: 'PATCH',
                 headers: {
