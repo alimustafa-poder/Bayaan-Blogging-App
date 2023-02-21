@@ -52,9 +52,6 @@ function EditBlogs() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        // if (error) {
-        //     displayError()
-        // }
         if (blog === null) return
         if (!user) {
             setError('You are not logged in.')

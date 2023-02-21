@@ -45,8 +45,11 @@ function Homepage() {
     }
 
     function displayError() {
-        if (!document.querySelector('#errorModal')) return
-        document.querySelector('#errorModal').classList.remove('scale-0')
+        //hack saving myself from another context
+        setTimeout(() => {
+            document.querySelector('#errorModal').classList.remove('scale-0')
+        })
+
         setTimeout(
             () =>
                 document.querySelector('#errorModal').classList.add('scale-0'),
