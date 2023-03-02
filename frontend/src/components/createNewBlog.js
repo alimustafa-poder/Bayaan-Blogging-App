@@ -54,7 +54,7 @@ function CreateBlog() {
     }
 
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden flex flex-col grow">
             <div className="flex flex-col grow sm:overflow-visible pt-3 items-center dark:bg-slate-600 transition-all">
                 <form onSubmit={(e) => handleSubmit(e)} className="w-[70%]">
                     <button

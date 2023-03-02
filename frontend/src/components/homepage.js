@@ -59,12 +59,12 @@ function Homepage() {
 
     if (blog == null) {
         return (
-            <div className="flex grow flex-col items-center gap-y-4 text-3xl sm:text-7xl overflow-hidden p-2 dark:bg-slate-800">
-                {[...Array(7)].map((_, i) => {
+            <div className="flex grow flex-col items-center gap-y-4 text-3xl sm:text-7xl overflow-clip sm:overflow-visible p-2 dark:bg-slate-800">
+                {[...Array(10)].map((_, i) => {
                     return (
                         <span
                             key={i}
-                            className="flex flex-col h-16 rounded-md animate-pulse bg-slate-600 w-[60%]"
+                            className="flex flex-col h-16 rounded-md animate-pulse bg-slate-600 w-[80%] sm:w-[60%]"
                             style={{
                                 animationDelay: `${i * 0.05}s`,
                                 animationDuration: '1s',
@@ -89,7 +89,7 @@ function Homepage() {
                             to={`/${elem._id}`}
                             key={elem._id}
                             onClick={SingleBlog}
-                            className="flex flex-col opacity-0 animate-opacity w-[60%]"
+                            className="flex flex-col opacity-0 animate-opacity w-[80%] sm:w-[60%]"
                             style={{
                                 animationDelay: `${i * 0.5}s`,
                                 animationDuration: '1s',

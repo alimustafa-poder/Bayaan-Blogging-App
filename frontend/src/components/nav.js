@@ -39,11 +39,13 @@ function Nav() {
                         }}
                     />
                 </div>
-                <Link to="/">
-                    <h1 className="sm:text-4xl sm:font-black text-white ml-6">
-                        Bayaan
-                    </h1>
-                </Link>
+                <div className="flex flex-col justify-center items-center">
+                    <Link to="/">
+                        <h1 className="text-xl font-xl sm:text-4xl sm:font-black text-white ml-6">
+                            Bayaan
+                        </h1>
+                    </Link>
+                </div>
                 <div className="flex flex-row gap-x-4">
                     <div className="flex flex-col justify-center">
                         <FontAwesomeIcon
@@ -100,13 +102,13 @@ function Nav() {
                             <Link to="/profile">
                                 <button
                                     type="submit"
-                                    className="text-xs bg-white border-black rounded-full sm:leading-4 border p-1 sm:p-4 sm:text-xl font-bold bg-black text-black"
+                                    className="text-xs bg-white border-black rounded-full sm:leading-4 border p-3 sm:p-4 sm:text-xl font-bold bg-black text-black"
                                 >
                                     U
                                 </button>
                             </Link>
                             <div
-                                className="text-xs bg-white border-black rounded-md sm:leading-4 border p-1 sm:p-4 sm:text-xl pointer cursor-pointer hover:bg-red-600 hover:text-white"
+                                className="flex flex-col justify-center font-bold sm:font-medium text-xs bg-white border-black rounded-md sm:leading-4 border px-2 sm:p-4 sm:text-xl pointer cursor-pointer hover:bg-red-600 hover:text-white active:bg-red-700 active:text-white"
                                 onClick={handleClick}
                             >
                                 Logout

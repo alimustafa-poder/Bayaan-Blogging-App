@@ -1,5 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClose } from '@fortawesome/free-solid-svg-icons'
+import {
+    faArchive,
+    faClose,
+    faEnvelope,
+    faInbox,
+    faTrashCan,
+} from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 export default function SideBar() {
@@ -33,8 +39,29 @@ export default function SideBar() {
                                             : '/Archive'
                                     }
                                     key={i}
+                                    className="flex flex-row items-center px-4 gap-x-2 hover:bg-slate-600"
                                 >
-                                    <li className="p-3 cursor-pointer hover:bg-slate-600 dark:text-white">
+                                    <FontAwesomeIcon
+                                        icon={
+                                            _ === 'All Items'
+                                                ? faInbox
+                                                : _ === 'Drafts'
+                                                ? faEnvelope
+                                                : _ === 'Deleted'
+                                                ? faTrashCan
+                                                : faArchive
+                                        }
+                                        style={
+                                            _ === 'All Items'
+                                                ? { color: '#3b82f6' }
+                                                : _ === 'Drafts'
+                                                ? { color: '#f59e0b' }
+                                                : _ === 'Deleted'
+                                                ? { color: '#ef4444' }
+                                                : { color: '#10b981' }
+                                        }
+                                    />
+                                    <li className="p-3 cursor-pointer dark:text-white">
                                         {_}
                                     </li>
                                 </Link>
