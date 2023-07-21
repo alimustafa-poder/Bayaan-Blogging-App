@@ -1,6 +1,6 @@
 [[redirects]]
 from = "/api/*"
-to = "https://64bacf97efe05b0d98c698dc--fanciful-gelato-3157a0.netlify.app/.netlify/functions/bundle/api/:splat"
+to = "https://netlify-deploy--aquamarine-vacherin-be3643.netlify.app/.netlify/functions/bundle/api/:splat"
 status = 200
 
 [[redirects]]
